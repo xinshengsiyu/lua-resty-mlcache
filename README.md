@@ -29,7 +29,7 @@ Illustration of the various caching levels built into this library:
 │       ┌───────────┐ ┌───────────┐ ┌───────────┐ │
 │       │worker     │ │worker     │ │worker     │ │
 │ L1    │           │ │           │ │           │ │
-│       │ Lua cache │ │ Lua cache │ │ Lua cache │ │
+│       │ lru cache │ │ lru cache │ │ lru cache │ │
 │       └───────────┘ └───────────┘ └───────────┘ │
 │             │             │             │       │
 │             ▼             ▼             ▼       │
@@ -48,7 +48,7 @@ Illustration of the various caching levels built into this library:
   L3                        │   I/O fetch
                             ▼
 
-                   Database, API, DNS, Disk, any I/O...
+                          Redis
 ```
 
 The cache level hierarchy is:
